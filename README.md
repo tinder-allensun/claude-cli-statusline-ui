@@ -21,12 +21,14 @@ Requires `jq` and `git`.
 Paste this into Claude Code:
 
 ```
-Set up the status line from https://github.com/tinder-allensun/claude-cli-statusline-ui as my Claude Code status line:
+/statusline Set up the status line from https://github.com/tinder-allensun/claude-cli-statusline-ui
+
+Do NOT write or generate your own script. Reuse the existing statusline.sh from that repo exactly as-is:
 1. Download statusline.sh from that repo (raw file from the main branch) to ~/.claude/statusline.sh.
 2. Check that jq is installed; if not, tell me how to install it.
-3. Add a "statusLine" entry to ~/.claude/settings.json with type "command" and command
-   "bash ~/.claude/statusline.sh". Keep all my existing settings, and if I already have a
-   statusLine configured, ask me before replacing it.
+3. Use the statusline setup to add a "statusLine" entry to ~/.claude/settings.json with type "command",
+   command "bash ~/.claude/statusline.sh", and "refreshInterval": 30. Keep all my existing settings, and
+   if I already have a statusLine configured, ask me before replacing it.
 4. Test it by piping sample JSON into the script and show me the output.
 ```
 
@@ -50,7 +52,8 @@ Restart Claude Code (or open a new session) to see the new status line.
    {
      "statusLine": {
        "type": "command",
-       "command": "bash ~/.claude/statusline.sh"
+       "command": "bash ~/.claude/statusline.sh",
+       "refreshInterval": 30
      }
    }
    ```
