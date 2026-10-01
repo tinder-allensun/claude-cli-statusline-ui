@@ -2,6 +2,8 @@
 
 A three-line status line for [Claude Code](https://claude.com/claude-code).
 
+The status line is the customizable bar at the bottom of the Claude Code CLI. Claude Code runs a script you provide, passes it session data as JSON (model, context usage, working directory, and so on), and displays whatever the script prints. This one turns that data into an at-a-glance dashboard, so you can see how full your context window is before quality degrades or auto-compaction kicks in, and whether your prompt cache is still warm. A warm cache keeps follow-up turns fast and cheap, while a cold one means the whole context gets re-processed. You also always know which project, branch, and model you're working with, without having to ask or run a command.
+
 ```
 ➜  my-project git:(main)
 Opus 4 (high) ▓▓▓▓░░░░░░░░░░░░░░░░ 40k/200k (20%)
